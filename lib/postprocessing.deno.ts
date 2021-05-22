@@ -2,7 +2,7 @@
 
 // Helper library written for useful postprocessing tasks with Flat Data
 // Has helper functions for manipulating csv, txt, json, excel, zip, and image files
-import { readJSON, writeJSON, removeFile } from 'https://deno.land/x/flat@0.0.10/mod.ts' 
+import { readJSON, writeJSON } from 'https://deno.land/x/flat@0.0.10/mod.ts' 
 
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
@@ -11,7 +11,7 @@ console.log(json)
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
 const currencyRates = Object.values(json.bpi); // convert property values into an array
-const filteredCurrencyRates = currencyRates.map(rate => ({ 
+const filteredCurrencyRates = currencyRates.map((rate: any) => ({ 
     currency: rate.description,
     bitcoinRate: rate.rate
 }));
