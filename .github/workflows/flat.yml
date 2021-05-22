@@ -6,7 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
-      - ./lib/postprocessing.deno.ts
+      - ./lib/postprocessing.deno.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -22,4 +22,4 @@ jobs:
         with:
           http_url: https://api.coindesk.com/v2/bpi/currentprice.json
           downloaded_filename: data.json
-          postprocess: ./lib/postprocessing.deno.ts
+          postprocess: ./lib/postprocessing.deno.js
