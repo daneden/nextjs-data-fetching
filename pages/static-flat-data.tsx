@@ -1,22 +1,37 @@
 import { readFileSync } from "fs"
-import { useEffect } from "react"
+import { GetStaticPropsResult } from "next"
+import { ProcessedData } from "../lib/postprocessing"
 
-export default function StaticFlatData({ data }) {
-  useEffect(() => console.log(data))
+interface Props {
+  data: ProcessedData[]
+  updatedAt: number
+}
+
+export default function StaticFlatData({ data, updatedAt }: Props) {
+  const generatedAt = new Date(updatedAt)
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Statically Generated with GitHub Flat Data</h1>
+      <p>
+        <small>
+          Page statically generated at {generatedAt.toLocaleDateString()}{" "}
+          {generatedAt.toLocaleTimeString()}
+        </small>
+      </p>
     </>
   )
 }
 
-export function getStaticProps() {
-  const data = readFileSync("btc-price-postprocessed.json")
+export function getStaticProps(): GetStaticPropsResult<Props> {
+  const data = JSON.parse(
+    readFileSync("btc-price-postprocessed.json").toString()
+  )
 
   return {
     props: {
       data,
+      updatedAt: Date.now(),
     },
   }
 }
