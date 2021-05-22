@@ -13,7 +13,8 @@ console.log(json)
 const currencyRates = Object.values(json.bpi); // convert property values into an array
 const filteredCurrencyRates = currencyRates.map((rate: any) => ({ 
     currency: rate.description,
-    bitcoinRate: rate.rate_float
+    bitcoinRate: rate.rate_float,
+    symbol: rate.symbol
 }));
 
 // Step 3. Write a new JSON file with our filtered data
