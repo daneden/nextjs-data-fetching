@@ -11,3 +11,5 @@ data to generate Next.js pages:
 I specifically wanted to illustrate how GitHub Flat Data could be useful for
 generating type definitions, and thought it would be helpful to see how these
 three methods differ and offer different advantages.
+
+[See the site live on Vercel](https://nextjs-data-fetching-orcin.vercel.app).
