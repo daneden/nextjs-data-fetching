@@ -36,7 +36,11 @@ export default function StaticFlatData({ data, updatedAt }: Props) {
       </p>
       <p>
         This method is especially useful if you want to have a local copy of the
-        data, for example, to generate type signatures from a data source.
+        data, for example, to generate{" "}
+        <Link href="https://github.com/daneden/nextjs-data-fetching/blob/main/lib/postprocessing.ts#L3">
+          <a>type signatures</a>
+        </Link>{" "}
+        from a data source.
       </p>
       <p>
         <Link href="https://github.com/daneden/nextjs-data-fetching/tree/main/pages/static-flat-data.tsx">
