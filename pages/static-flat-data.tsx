@@ -30,8 +30,8 @@ export default function StaticFlatData({ data, updatedAt }: Props) {
         <Link href="https://octo.github.com/projects/flat-data">
           <a>Flat Data</a>
         </Link>
-        . A GitHub action is responsible for refreshing the data source every 5
-        minutes, pushing changes to the git repository, which causes a new
+        . A GitHub action is responsible for refreshing the data source every 2
+        hours, pushing changes to the git repository, which causes a new
         deployment of the Next.js website.
       </p>
       <p>
